@@ -1,0 +1,24 @@
+Draft of email to potentially send to students:
+----------------------------------------------
+
+Hi students,
+
+in the third part of the assignment I asked you to read through the tensorflow tutorial and to make updates to the jupyter notebook based on things that you'd learnt from reading that. This morning on of you pointed to the "important note about BatchNormalization layers" in that tutorial as he couldn't figure out where in the code we were passing "training=False" into the base model.
+
+This was not something that you were supposed to do, but something I should have done in the lines of code I'd written for you (in the cell where the ResNet50 model is defined and summarized). You do not have to fix this in the assignment, but do be aware of this issue. I will ammend the code for next year.
+
+When I run the code again now with this proper handling of the BatchNormalization layers, the final results (with the base model unfrozen) were similar to what you will get with the code as it currently is. The results gotten with the base model frozen are however somewhat better when the BatchNormalization layers are handled properly. I'm testing this right now on a CPU, as you students have all the GPUs at the moment - an epoch that takes 4 seconds to run on a GPU is taking 150 seconds to run on the CPU on my laptop! I look forward to when I can get a GPU back!!
+
+I made this assigment actually a couple of years ago and this is the third time it's been given in the pb-seq course. This issue has not been pointed out before so well done and thank you to the student (or group) that spotted this!
+
+In my defence there is a chance this note in the tutorial was an update added after I'd made the assignment... or perhaps that's just wishful thinking on my part and I'd simply overlooked it :( 
+
+Regards, - Phil
+
+Jupyter notebook:
+----------------
+In assignment_part3_BN_fix.ipynb I explored doing this fix. Was on a CPU so super slow. Results with base frozen were better, but worse with the base unfrozen. Could it be that letting the mean and variance be calculated based on our cell data is actually a better approach than keeping those that came from ImageNet? In the same way that it can be a better idea for the standardization of the input images, given that the distributions of pixels in the images are not much like those in the RGB channels of natural images.
+
+Explore these things further when I have a GPU... and decide what to do for next year.
+
+The student that pointed this out, and who seemed pretty on the ball otherwise too was called, or at least his name on Zoom was, Tianwuyang.

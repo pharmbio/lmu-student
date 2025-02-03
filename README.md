@@ -1,2 +1,2 @@
 # DeepLearningTutorials
-Deep Learning Notebooks adapted for some of our courses by David Holmberg - including PB_SEQ, ULLA, Ai4DD etc 
+Deep Learning Assignment for PB-d. You will find the instructions inside the notebooks. A description of the assignment will be published on Studium., 
